@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mi Proyecto Web</title>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            .modal-content {
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            .modal-header {
+                border-bottom: 1px solid #dee2e6;
+            }
+            .modal-title {
+                font-weight: bold;
+            }
+            .modal-body {
+                padding: 20px;
+            }
+            .modal-footer {
+                border-top: 1px solid #dee2e6;
+                justify-content: flex-end;
+            }
+            .modal-footer .btn {
+                margin-left: 10px;
+            }
+            .video-container {
+                position: relative;
+                padding-bottom: 56.25%;
+                height: 0;
+                overflow: hidden;
+                margin-bottom: 30px;
+            }
+            .video-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            .video-section {
+                background-color: #f8f9fa;
+                padding: 60px 0;
+            }
+        </style>
+    </head>
+<body>
+    <header>
+        <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark custom-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="logo.png" alt="Logo" height="200" width="100">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#temas">Temas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#video-bootstrap">Bootstrap</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactoModal">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-left">
+                        <h1>Proyecto Boostrap</h1>
+                        <p>Diego Alejandro Gallegos Castillo 348072</p>
+                        <p>Desarrollo Web</p>
+                        <p>Explora nuestra plataforma y descubre más.</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal">Más información</button>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="imagen1.jpg" class="d-block w-100" alt="Imagen 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="imagen2.webp" class="d-block w-100" alt="Imagen 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="imagen3.png" class="d-block w-100" alt="Imagen 3">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Siguiente</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nueva sección de video sobre Bootstrap -->
+        <section id="video-bootstrap" class="video-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="mb-4">Tutorial de Bootstrap 5</h2>
+                        <p class="lead mb-5">Aprende los fundamentos de Bootstrap con este video introductorio</p>
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/Jyvffr3aCp0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><i class="fas fa-check-circle me-2 text-primary"></i>¿Qué es Bootstrap?</h5>
+                                        <p class="card-text">Bootstrap es el framework de CSS más popular para desarrollar sitios web responsivos y móviles.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><i class="fas fa-check-circle me-2 text-primary"></i>Características</h5>
+                                        <p class="card-text">Incluye sistema de grid, componentes pre-diseñados y potentes plugins de JavaScript.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="temas" class="container mt-5">
+            <h2 class="text-center mb-4">Temas del Proyecto</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-code card-icon"></i>
+                            <h5 class="card-title">Tecnologías de Web APIs</h5>
+                            <p class="card-text">Explora las tecnologías utilizadas para construir APIs modernas y eficientes.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tema1Modal">Leer más</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-server card-icon"></i>
+                            <h5 class="card-title">Microservicios</h5>
+                            <p class="card-text">Descubre cómo los microservicios permiten una arquitectura escalable y flexible.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tema2Modal">Leer más</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-rocket card-icon"></i>
+                            <h5 class="card-title">Desarrollo de una Web API</h5>
+                            <p class="card-text">Aprende cómo construir una API RESTful eficiente y fácil de mantener.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tema3Modal">Leer más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-boxes card-icon"></i>
+                            <h5 class="card-title">Manejo de Contenedores</h5>
+                            <p class="card-text">Uso de Docker y Kubernetes para la gestión de aplicaciones y despliegue continuo.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tema4Modal">Leer más</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-cloud card-icon"></i>
+                            <h5 class="card-title">Desarrollo en la Nube</h5>
+                            <p class="card-text">Implementación de aplicaciones en plataformas cloud como AWS y Azure para mayor escalabilidad.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tema5Modal">Leer más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container text-center py-3">
+            <p>&copy;Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Información Adicional</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¡Hola! Te doy la bienvenida a mi proyecto web, un espacio que he creado con la intención de explorar y compartir mis conocimientos sobre las tecnologías y prácticas más actuales en el desarrollo de aplicaciones web.</p>
+                    <p>Aquí, te ofrezco información detallada sobre diversos temas que considero fundamentales:</p>
+                    <ul>
+                        <li><strong>Tecnologías de Web APIs:</strong> Me sumerjo en las herramientas y técnicas que considero esenciales para construir APIs robustas y eficientes.</li>
+                        <li><strong>Microservicios:</strong> Te invito a descubrir conmigo cómo esta arquitectura puede transformar la escalabilidad y flexibilidad de tus aplicaciones.</li>
+                        <li><strong>Desarrollo de Web APIs:</strong> Comparto contigo el proceso completo que sigo para crear APIs RESTful, desde la planificación hasta la implementación.</li>
+                        <li><strong>Manejo de Contenedores:</strong> Exploro contigo el uso de Docker y Kubernetes, herramientas que considero clave para la gestión y despliegue de aplicaciones en contenedores.</li>
+                        <li><strong>Desarrollo en la Nube:</strong> Te guío a través de la implementación de aplicaciones en plataformas líderes como AWS y Azure, donde la escalabilidad alcanza su máximo potencial.</li>
+                    </ul>
+                    <p>Mi objetivo es proporcionarte recursos y conocimientos prácticos, aquellos que a mí me han servido, para que puedas aplicar estas tecnologías en tus propios proyectos y mantenerte actualizado en el dinámico mundo del desarrollo web.</p>
+                    <p>¡Te invito a explorar, aprender y construir conmigo!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="contactoModal" tabindex="-1" aria-labelledby="contactoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactoModalLabel">Contacto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                    <div id="contactMessage" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="tema1Modal" tabindex="-1" aria-labelledby="tema1ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tema1ModalLabel">Tecnologías de Web APIs: Conectando el Mundo Digital</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Las Web APIs son como los "enchufes" que permiten que diferentes aplicaciones y servicios en internet se conecten y compartan información. Imagina que tu teléfono necesita saber el clima, mostrar un mapa o permitirte pagar algo en línea; todo esto es posible gracias a las APIs.</p>
+                    <p><strong>Tipos Principales:</strong></p>
+                    <ul>
+                        <li><strong>REST (Representational State Transfer):</strong> Es el tipo más popular. Usa "direcciones" web (URLs) para encontrar información y "verbos" (como "obtener", "enviar", "actualizar") para indicar qué hacer con esa información. Es como un lenguaje simple y directo que muchas aplicaciones entienden.</li>
+                        <li><strong>GraphQL:</strong> Permite a las aplicaciones pedir exactamente la información que necesitan, evitando recibir datos innecesarios. Es como un menú personalizado donde eliges solo los ingredientes que quieres.</li>
+                    </ul>
+                    <p><strong>¿Para qué se usan?</strong></p>
+                    <ul>
+                        <li><strong>Pagos en línea:</strong> Permiten que tiendas y aplicaciones acepten pagos de forma segura (como PayPal).</li>
+                        <li><strong>Mapas y ubicación:</strong> Permiten mostrar mapas y obtener información de ubicación (como Google Maps).</li>
+                        <li><strong>Redes sociales:</strong> Permiten que aplicaciones muestren publicaciones, perfiles y otras funciones de redes sociales (como Twitter o Facebook).</li>
+                        <li><strong>Clima:</strong> Permiten que aplicaciones muestren la información del clima actual.</li>
+                        <li><strong>Traducciones:</strong> Permiten que aplicaciones puedan traducir textos de un idioma a otro.</li>
+                    </ul>
+                    <p><strong>En resumen:</strong></p>
+                    <p>Las Web APIs son esenciales para que internet funcione como lo conocemos. Facilitan la comunicación y el intercambio de información entre aplicaciones, permitiendo crear servicios y experiencias más ricas y conectadas.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="tema2Modal" tabindex="-1" aria-labelledby="tema2ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tema2ModalLabel">Microservicios: Apps Modulares y Flexibles</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Los microservicios son una arquitectura de software que divide una aplicación en pequeñas partes independientes llamadas "servicios". Cada servicio se enfoca en una función específica y se comunica con los demás a través de APIs.</p>
+                    <p><strong>Beneficios Clave:</strong></p>
+                    <ul>
+                        <li><strong>Independencia:</strong> Cada servicio puede desarrollarse, desplegarse y escalarse por separado.</li>
+                        <li><strong>Flexibilidad:</strong> Permite adoptar diferentes tecnologías para cada servicio.</li>
+                        <li><strong>Escalabilidad:</strong> Facilita aumentar la capacidad solo de los servicios que lo necesitan.</li>
+                        <li><strong>Mantenibilidad:</strong> Simplifica la corrección de errores y la actualización de funciones.</li>
+                    </ul>
+                    <p><strong>Ejemplos de Uso:</strong></p>
+                    <ul>
+                        <li><strong>Tiendas en línea:</strong> Servicios para inventario, carrito de compras, pagos, etc.</li>
+                        <li><strong>Redes sociales:</strong> Servicios para perfiles, publicaciones, mensajes, notificaciones, etc.</li>
+                    </ul>
+                    <p><strong>En resumen:</strong></p>
+                    <p>Los microservicios permiten construir aplicaciones complejas de forma modular, facilitando su desarrollo, escalabilidad y mantenimiento.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="tema3Modal" tabindex="-1" aria-labelledby="tema3ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tema3ModalLabel">Desarrollo de una Web API: Construyendo Puentes Digitales</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Desarrollar una Web API implica crear una interfaz que permita a diferentes aplicaciones comunicarse y compartir datos a través de la web. Es como construir un puente que conecta diferentes mundos digitales.</p>
+                    <p><strong>Pasos Clave:</strong></p>
+                    <ol>
+                        <li><strong>Diseño:</strong>
+                            <ul>
+                                <li>Definir qué datos y funcionalidades ofrecerá la API.</li>
+                                <li>Elegir el tipo de API (REST, GraphQL).</li>
+                                <li>Planificar las "direcciones" (URLs) y los "verbos" (GET, POST, etc.).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Implementación:</strong>
+                            <ul>
+                                <li>Usar un lenguaje de programación (Python, JavaScript, etc.) y un framework (Django, Express.js, etc.).</li>
+                                <li>Conectar la API a una base de datos.</li>
+                                <li>Implementar la lógica para procesar solicitudes y generar respuestas.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pruebas:</strong>
+                            <ul>
+                                <li>Verificar que la API funcione correctamente y devuelva los datos esperados.</li>
+                                <li>Usar herramientas como Postman para probar la API.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Documentación:</strong>
+                            <ul>
+                                <li>Crear documentación clara para que otros desarrolladores puedan usar la API.</li>
+                                <li>Usar herramientas como Swagger para generar documentación automáticamente.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p><strong>Tecnologías Comunes:</strong></p>
+                    <ul>
+                        <li><strong>Lenguajes:</strong> Python (Django/Flask), JavaScript (Node.js/Express.js), Java (Spring Boot), .NET (ASP.NET).</li>
+                        <li><strong>Bases de datos:</strong> MySQL, PostgreSQL, MongoDB.</li>
+                        <li><strong>Herramientas:</strong> Postman, Swagger.</li>
+                    </ul>
+                    <p><strong>En resumen:</strong></p>
+                    <p>Desarrollar una Web API implica crear una interfaz que permita a las aplicaciones comunicarse y compartir datos. Requiere diseño, implementación, pruebas y documentación cuidadosos.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="tema4Modal" tabindex="-1" aria-labelledby="tema4ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tema4ModalLabel">Manejo de Contenedores: Simplificando el Despliegue de Aplicaciones</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>El manejo de contenedores es una forma de empaquetar y ejecutar aplicaciones de manera consistente en diferentes entornos. Los contenedores son como "cajas" que contienen todo lo necesario para que una aplicación funcione: código, bibliotecas, configuraciones, etc.</p>
+                    <p><strong>¿Por qué son útiles?</strong></p>
+                    <ul>
+                        <li><strong>Consistencia:</strong> Las aplicaciones funcionan igual en cualquier entorno (desarrollo, pruebas, producción).</li>
+                        <li><strong>Eficiencia:</strong> Permiten ejecutar múltiples aplicaciones en un mismo servidor, ahorrando recursos.</li>
+                        <li><strong>Velocidad:</strong> Facilitan el despliegue y la actualización de aplicaciones de forma rápida y sencilla.</li>
+                    </ul>
+                    <p><strong>Tecnologías Clave:</strong></p>
+                    <ul>
+                        <li><strong>Docker:</strong> Es la plataforma de contenedores más popular. Permite crear, ejecutar y administrar contenedores.</li>
+                        <li><strong>Kubernetes:</strong> Es un sistema de orquestación de contenedores que automatiza el despliegue, la gestión y la escalabilidad de aplicaciones en contenedores.</li>
+                    </ul>
+                    <p><strong>Ejemplos de Uso:</strong></p>
+                    <ul>
+                        <li>Desplegar aplicaciones web de forma rápida y sencilla.</li>
+                        <li>Crear entornos de desarrollo consistentes para diferentes equipos.</li>
+                        <li>Ejecutar microservicios de forma escalable y eficiente.</li>
+                    </ul>
+                    <p><strong>En resumen:</strong></p>
+                    <p>El manejo de contenedores simplifica el despliegue y la gestión de aplicaciones, haciéndolas más consistentes, eficientes y rápidas.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="tema5Modal" tabindex="-1" aria-labelledby="tema5ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tema5ModalLabel">Desarrollo en la Nube: Creando Aplicaciones en la Era Digital</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>El desarrollo en la nube implica construir y desplegar aplicaciones utilizando servicios y recursos alojados en la nube, en lugar de servidores locales. Esto permite crear aplicaciones más escalables, flexibles y accesibles.</p>
+                    <p><strong>¿Por qué es útil?</strong></p>
+                    <ul>
+                        <li><strong>Escalabilidad:</strong> Permite ajustar los recursos según la demanda, evitando problemas de rendimiento.</li>
+                        <li><strong>Flexibilidad:</strong> Facilita la adopción de nuevas tecnologías y la integración con otros servicios en la nube.</li>
+                        <li><strong>Accesibilidad:</strong> Permite acceder a las aplicaciones desde cualquier lugar y dispositivo.</li>
+                        <li><strong>Eficiencia:</strong> Reduce los costos de infraestructura y mantenimiento.</li>
+                    </ul>
+                    <p><strong>Tecnologías Clave:</strong></p>
+                    <ul>
+                        <li><strong>Proveedores de nube:</strong> AWS, Azure, Google Cloud.</li>
+                        <li><strong>Servicios:</strong> Computación en la nube (EC2, VMs), almacenamiento (S3, Blob Storage), bases de datos (RDS, Cosmos DB).</li>
+                        <li><strong>Herramientas:</strong> Docker, Kubernetes, Serverless.</li>
+                    </ul>
+                    <p><strong>Ejemplos de Uso:</strong></p>
+                    <ul>
+                        <li>Crear aplicaciones web y móviles escalables.</li>
+                        <li>Desarrollar aplicaciones de big data y machine learning.</li>
+                        <li>Implementar microservicios y APIs.</li>
+                    </ul>
+                    <p><strong>En resumen:</strong></p>
+                    <p>El desarrollo en la nube permite crear aplicaciones modernas, escalables y eficientes, aprovechando los recursos y servicios que ofrece la nube.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let prevScrollPos = window.pageYOffset;
+        const navbar = document.getElementById("navbar");
+
+        window.onscroll = function() {
+            const currentScrollPos = window.pageYOffset;
+
+            if (prevScrollPos > currentScrollPos) {
+                navbar.style.top = "0";
+            } else {
+                navbar.style.top = "-80px"; // Ajusta este valor según la altura de tu navbar
+            }
+
+            prevScrollPos = currentScrollPos;
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            // Aquí puedes agregar tu lógica para enviar el formulario
+            // Por ejemplo, usar fetch para enviar los datos a un servidor
+
+            const contactMessage = document.getElementById('contactMessage');
+            contactMessage.innerHTML = '<div class="alert alert-success">Mensaje enviado con éxito.</div>';
+
+            // Limpiar el formulario después del envío exitoso
+            document.getElementById('nombre').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('mensaje').value = '';
+
+            // Opcional: Cerrar el modal después de un tiempo
+            setTimeout(() => {
+                const modal = bootstrap.Modal.getInstance(document.getElementById('contactoModal'));
+                modal.hide();
+                contactMessage.innerHTML = ''; // Limpiar el mensaje
+            }, 3000);
+        });
+    </script>
+    
+</body>
+</html>
